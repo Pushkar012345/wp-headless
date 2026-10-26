@@ -32,7 +32,7 @@ export default async function Home() {
       <main className="flex-1 max-w-5xl mx-auto px-6 py-12 w-full">
         <h2 className="text-2xl font-bold mb-6">Latest posts</h2>
         <div className="grid gap-6 md:grid-cols-2">
-          {posts.map((p) => {
+          {posts.map((p: any) => {
             const img =
   p._embedded?.["wp:featuredmedia"]?.[0]?.source_url ||
   p.jetpack_featured_media_url;
