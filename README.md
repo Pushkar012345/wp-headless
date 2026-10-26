@@ -1,36 +1,72 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Pushkar Blog – Headless WordPress + Next.js
+
+A headless blog where content is written in **WordPress** and served by a **Next.js** frontend through the **WordPress REST API**.
+
+[![Live Demo](https://img.shields.io/badge/Live%20Demo-Vercel-10b981?style=for-the-badge)](https://YOUR-VERCEL-LINK.vercel.app)
+
+> Replace `YOUR-VERCEL-LINK` with your Vercel URL.
+
+## Features
+
+- Blog home page with post cards (featured image, date, excerpt)
+- Individual post pages at `/posts/[slug]`
+- Content managed in WordPress, no code changes needed to publish
+- Responsive layout built with Tailwind CSS
+- Configuration through environment variables
+
+## Tech Stack
+
+| Area | Technology |
+|------|------------|
+| Frontend | Next.js 16 (App Router), React |
+| Styling | Tailwind CSS |
+| CMS | WordPress (REST API) |
+| Hosting | Vercel |
+
+## How It Works
+
+1. Posts are written in the WordPress dashboard.
+2. WordPress exposes them as JSON at `/wp-json/wp/v2/posts`.
+3. Next.js fetches this JSON on the server and renders the pages.
 
 ## Getting Started
 
-First, run the development server:
+```bash
+git clone https://github.com/Pushkar012345/wp-headless.git
+cd wp-headless
+npm install
+```
+
+Create a `.env.local` file:
+
+```
+WP_API_URL=https://public-api.wordpress.com/wp/v2/sites/YOUR-SITE.wordpress.com
+```
+
+For a self-hosted or local WordPress site, use `http://your-site.local/wp-json/wp/v2`.
+
+Run the dev server:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open http://localhost:3000.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Project Structure
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```
+app/
+  page.tsx                  # Blog home: list of posts
+  posts/[slug]/page.js      # Single post page
+```
 
-## Learn More
+## Related Work
 
-To learn more about Next.js, take a look at the following resources:
+- WordPress custom plugin with a shortcode (`[diwali_banner]`) built and tested on a local WordPress site.
+- A headless Shopify storefront built with Next.js and the Storefront API.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Author
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+**Pushkar Pawar**
+[GitHub](https://github.com/Pushkar012345) · [LinkedIn](https://www.linkedin.com/in/pushkarpawar314/)
